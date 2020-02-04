@@ -1,0 +1,35 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs>
+
+        <a-assets>
+            <a-asset-item 
+                id="cesium-man" 
+                src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf">
+            </a-asset-item>
+            <a-asset-item 
+                id="mannequin-man" 
+                src="https://gitlab.divante.pl/lzahuta/arjs-demo/raw/9a5b7fed8a8cd40e744f616320da1f0e96327e76/mannequin.gltf">
+            </a-asset-item>
+
+        </a-assets>
+
+        <a-marker preset="hiro">
+            <a-entity gltf-model="#cesium-man"></a-entity>
+            <a-entity gltf-model="#mannequin-man"></a-entity>
+
+            <a-box position='0 0 0' material='color: green;' depth="1" height="0.01" width="1"></a-box>
+            <!-- <a-text value="Hello, World!"></a-text> -->
+        </a-marker>
+        
+        <a-entity camera></a-entity>
+        
+    </a-scene>
+
+</body>
+</html>
